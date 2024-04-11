@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "language": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "name_es": {
+      "type": "string"
+    },
+    "name_it": {
+      "type": "string"
+    },
+    "color": {
+      "type": "biginteger"
+    },
+    "icon": {
+      "type": "biginteger"
+    },
+    "type": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
