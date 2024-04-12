@@ -926,6 +926,11 @@ export interface ApiLikeLike extends Schema.CollectionType {
   attributes: {
     userId: Attribute.Integer;
     productId: Attribute.Integer;
+    products: Attribute.Relation<
+      'api::like.like',
+      'manyToMany',
+      'api::product.product'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1014,9 +1019,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
     statusProduct: Attribute.String;
     country: Attribute.String;
     status: Attribute.String;
-    likes: Attribute.Relation<
+    like: Attribute.Relation<
       'api::product.product',
-      'oneToMany',
+      'manyToMany',
       'api::like.like'
     >;
     multimedia: Attribute.Relation<

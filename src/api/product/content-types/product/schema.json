@@ -51,10 +51,11 @@
     "status": {
       "type": "string"
     },
-    "likes": {
+    "like": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::like.like"
+      "relation": "manyToMany",
+      "target": "api::like.like",
+      "inversedBy": "products"
     },
     "multimedia": {
       "type": "relation",

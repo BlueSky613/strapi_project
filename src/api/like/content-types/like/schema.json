@@ -16,6 +16,12 @@
     },
     "productId": {
       "type": "integer"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "like"
     }
   }
 }
