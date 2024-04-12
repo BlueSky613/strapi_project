@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "phonenumber": {
+      "type": "biginteger"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "adType": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "peopleType": {
+      "type": "string"
+    },
+    "statusProduct": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "likes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::like.like"
+    }
+  }
+}
