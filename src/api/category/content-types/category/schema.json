@@ -24,9 +24,6 @@
     "name_it": {
       "type": "string"
     },
-    "color": {
-      "type": "biginteger"
-    },
     "icon": {
       "type": "biginteger"
     },
@@ -34,6 +31,9 @@
       "type": "string"
     },
     "slug": {
+      "type": "string"
+    },
+    "color": {
       "type": "string"
     }
   }

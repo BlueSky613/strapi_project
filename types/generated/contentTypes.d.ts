@@ -804,10 +804,10 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     name_en: Attribute.String;
     name_es: Attribute.String;
     name_it: Attribute.String;
-    color: Attribute.BigInteger;
     icon: Attribute.BigInteger;
     type: Attribute.String;
     slug: Attribute.String;
+    color: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
