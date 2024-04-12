@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "larges",
+  "info": {
+    "singularName": "large",
+    "pluralName": "larges",
+    "displayName": "large"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "ext": {
+      "type": "string"
+    },
+    "mime": {
+      "type": "string"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "size": {
+      "type": "decimal"
+    },
+    "path": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

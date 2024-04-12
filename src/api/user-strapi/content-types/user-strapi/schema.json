@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_strapis",
+  "info": {
+    "singularName": "user-strapi",
+    "pluralName": "user-strapis",
+    "displayName": "userStrapi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "token": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "confirmed": {
+      "type": "boolean"
+    },
+    "blocked": {
+      "type": "string"
+    },
+    "validation": {
+      "type": "string"
+    },
+    "aboutMe": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "smoker": {
+      "type": "string",
+      "default": "no"
+    },
+    "sonsAndDaughters": {
+      "type": "string",
+      "default": "no"
+    },
+    "bodyShape": {
+      "type": "string",
+      "default": "skinny"
+    },
+    "eyeColor": {
+      "type": "string",
+      "default": "brown"
+    },
+    "sport": {
+      "type": "string",
+      "default": "soccer"
+    },
+    "recreation": {
+      "type": "string",
+      "default": "watchMovies"
+    },
+    "hairColor": {
+      "type": "string",
+      "default": "black"
+    },
+    "fantasy": {
+      "type": "string",
+      "default": "flirt"
+    },
+    "type": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string"
+    },
+    "nameLastName": {
+      "type": "string"
+    },
+    "currentLocation": {
+      "type": "string"
+    },
+    "generalLocation": {
+      "type": "string"
+    }
+  }
+}

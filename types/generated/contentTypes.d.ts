@@ -826,6 +826,93 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFormatFormat extends Schema.CollectionType {
+  collectionName: 'formats';
+  info: {
+    singularName: 'format';
+    pluralName: 'formats';
+    displayName: 'format';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    thumbnail: Attribute.Relation<
+      'api::format.format',
+      'oneToMany',
+      'api::large.large'
+    >;
+    large: Attribute.Relation<
+      'api::format.format',
+      'oneToMany',
+      'api::large.large'
+    >;
+    medium: Attribute.Relation<
+      'api::format.format',
+      'oneToMany',
+      'api::large.large'
+    >;
+    small: Attribute.Relation<
+      'api::format.format',
+      'oneToMany',
+      'api::large.large'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::format.format',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::format.format',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLargeLarge extends Schema.CollectionType {
+  collectionName: 'larges';
+  info: {
+    singularName: 'large';
+    pluralName: 'larges';
+    displayName: 'large';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    hash: Attribute.String;
+    ext: Attribute.String;
+    mime: Attribute.String;
+    width: Attribute.Integer;
+    height: Attribute.Integer;
+    size: Attribute.Decimal;
+    path: Attribute.String;
+    url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::large.large',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::large.large',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLikeLike extends Schema.CollectionType {
   collectionName: 'likes';
   info: {
@@ -845,6 +932,59 @@ export interface ApiLikeLike extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::like.like', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::like.like', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMultimediaMultimedia extends Schema.CollectionType {
+  collectionName: 'multimedias';
+  info: {
+    singularName: 'multimedia';
+    pluralName: 'multimedias';
+    displayName: 'multimedia';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    alternativeText: Attribute.String;
+    caption: Attribute.String;
+    width: Attribute.Integer;
+    height: Attribute.Integer;
+    formats: Attribute.Relation<
+      'api::multimedia.multimedia',
+      'oneToOne',
+      'api::format.format'
+    >;
+    hash: Attribute.String;
+    ext: Attribute.String;
+    mime: Attribute.String;
+    url: Attribute.String;
+    size: Attribute.Decimal;
+    previewUrl: Attribute.String;
+    provider: Attribute.String;
+    providerMetadata: Attribute.String;
+    related: Attribute.Relation<
+      'api::multimedia.multimedia',
+      'oneToMany',
+      'api::user-strapi.user-strapi'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::multimedia.multimedia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::multimedia.multimedia',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -879,6 +1019,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::like.like'
     >;
+    multimedia: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::multimedia.multimedia'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -890,6 +1035,58 @@ export interface ApiProductProduct extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUserStrapiUserStrapi extends Schema.CollectionType {
+  collectionName: 'user_strapis';
+  info: {
+    singularName: 'user-strapi';
+    pluralName: 'user-strapis';
+    displayName: 'userStrapi';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    token: Attribute.String;
+    username: Attribute.String;
+    email: Attribute.String;
+    provider: Attribute.String;
+    confirmed: Attribute.Boolean;
+    blocked: Attribute.String;
+    validation: Attribute.String;
+    aboutMe: Attribute.String;
+    height: Attribute.String;
+    smoker: Attribute.String & Attribute.DefaultTo<'no'>;
+    sonsAndDaughters: Attribute.String & Attribute.DefaultTo<'no'>;
+    bodyShape: Attribute.String & Attribute.DefaultTo<'skinny'>;
+    eyeColor: Attribute.String & Attribute.DefaultTo<'brown'>;
+    sport: Attribute.String & Attribute.DefaultTo<'soccer'>;
+    recreation: Attribute.String & Attribute.DefaultTo<'watchMovies'>;
+    hairColor: Attribute.String & Attribute.DefaultTo<'black'>;
+    fantasy: Attribute.String & Attribute.DefaultTo<'flirt'>;
+    type: Attribute.String;
+    phoneNumber: Attribute.String;
+    birthday: Attribute.String;
+    nameLastName: Attribute.String;
+    currentLocation: Attribute.String;
+    generalLocation: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::user-strapi.user-strapi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::user-strapi.user-strapi',
       'oneToOne',
       'admin::user'
     > &
@@ -916,8 +1113,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::category.category': ApiCategoryCategory;
+      'api::format.format': ApiFormatFormat;
+      'api::large.large': ApiLargeLarge;
       'api::like.like': ApiLikeLike;
+      'api::multimedia.multimedia': ApiMultimediaMultimedia;
       'api::product.product': ApiProductProduct;
+      'api::user-strapi.user-strapi': ApiUserStrapiUserStrapi;
     }
   }
 }

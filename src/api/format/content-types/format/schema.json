@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formats",
+  "info": {
+    "singularName": "format",
+    "pluralName": "formats",
+    "displayName": "format"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::large.large"
+    },
+    "large": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::large.large"
+    },
+    "medium": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::large.large"
+    },
+    "small": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::large.large"
+    }
+  }
+}

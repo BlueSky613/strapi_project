@@ -55,6 +55,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::like.like"
+    },
+    "multimedia": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::multimedia.multimedia"
     }
   }
 }

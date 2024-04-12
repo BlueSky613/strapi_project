@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "multimedias",
+  "info": {
+    "singularName": "multimedia",
+    "pluralName": "multimedias",
+    "displayName": "multimedia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "alternativeText": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "formats": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::format.format"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "ext": {
+      "type": "string"
+    },
+    "mime": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "size": {
+      "type": "decimal"
+    },
+    "previewUrl": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "providerMetadata": {
+      "type": "string"
+    },
+    "related": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-strapi.user-strapi"
+    }
+  }
+}
